@@ -1,0 +1,47 @@
+.GoodsTable {
+    width: 100%;
+    text-align: center;
+    border-spacing: 0px 10px;
+}
+
+.GoodsTable caption{
+    font: italic normal 700 2em serif;
+}
+
+.GoodsTable th {
+    padding: 10px 20px;
+    background-color: rgb(153, 209, 255);
+    color: #333333;
+    border: solid 3px #333333;
+    border-right: none;
+    font-size: 1.5em;
+}
+
+.GoodsTable th:last-child {
+    border-right: solid 3px #333333;
+}
+
+.GoodsTable td {
+    vertical-align: middle;
+    font-size: 1em;
+    border: 3px solid #333333;
+    border-left: none;
+}
+
+.GoodsTable td:first-child {
+    border-left: 3px solid #333333;
+}
+
+.GoodsTable th:nth-child(3), td:nth-child(3){
+    background-color: rgb(255, 163, 209);
+}
+
+.GoodsTable tr:nth-child(odd){
+    background-color: rgb(153, 209, 255);
+}
+
+.GoodImage {
+    max-width: 250px;
+    max-height: 300px;
+    padding: 5px;
+}
