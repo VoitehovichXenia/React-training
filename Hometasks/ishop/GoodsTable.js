@@ -21,9 +21,9 @@ var GoodsTable = React.createClass({
                 React.DOM.td({}, 
                     React.DOM.img({src: good.img, className: 'GoodImage'})
                 ),
-                React.DOM.td({className: 'GoodName'}, good.name),
-                React.DOM.td({className: 'GoodPrice'}, good.price),
-                React.DOM.td({className: 'GoodRest'}, good.rest),
+                React.DOM.td({}, good.name),
+                React.DOM.td({}, good.price),
+                React.DOM.td({}, good.rest),
             );
         });
 
@@ -32,9 +32,9 @@ var GoodsTable = React.createClass({
             React.DOM.tbody({},
                 React.DOM.tr({key: 'Head'},
                     React.DOM.th({className: 'GoodImage'}, 'Photo'),
-                    React.DOM.th({className: 'GoodName'}, 'Good name'),
-                    React.DOM.th({className: 'GoodPrice'}, 'Price'),
-                    React.DOM.th({className: 'GoodRest'}, 'Warehouse balance'),
+                    React.DOM.th({}, 'Good name'),
+                    React.DOM.th({}, 'Price'),
+                    React.DOM.th({}, 'Warehouse balance'),
                 ),
                 goodsTR,
             )       
