@@ -21,6 +21,7 @@
       selectedAnswerCode: null,
       freeanswertext:this.props.deffreeanswertext,
       workMode:this.props.startWorkMode,
+      answers: this.props.answers,
     };
   },
 
@@ -37,7 +38,12 @@
         answer.count++;
     } );
 
-    this.setState( {workMode:2} );
+    // var newAnswers = this.state.answers.forEach( answer => {
+    //   if ( answer.code==this.state.selectedAnswerCode )
+    //     answer.count++;
+    // } );
+
+    this.setState( {workMode:2} ); // this.setState( {workMode:2, answers: newAnswers} );
   },
 
   freeAnswerTextChanged: function(fat) { 

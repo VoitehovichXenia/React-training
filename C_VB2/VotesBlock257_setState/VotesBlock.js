@@ -29,8 +29,8 @@
   },
 
   cntPlus3: function() {
-    this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
-    this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
+    this.setState( (prevState, props) => ({cnt:prevState.cnt+1}) );
+    this.setState( (prevState, props) => (0,{cnt:prevState.cnt+1}) );
     this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
   },
 
