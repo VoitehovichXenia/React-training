@@ -18,23 +18,23 @@ var GoodsTable = React.createClass({
 
         var goodsTR = this.props.goods.map(function(good) {
             return React.DOM.tr({key: good.name, className: 'Good'},
-                React.DOM.td({}, 
+                React.DOM.td(null, 
                     React.DOM.img({src: good.img, className: 'GoodImage'})
                 ),
-                React.DOM.td({}, good.name),
-                React.DOM.td({}, good.price),
-                React.DOM.td({}, good.rest),
+                React.DOM.td(null, good.name),
+                React.DOM.td(null, good.price),
+                React.DOM.td(null, good.rest),
             );
         });
 
         return React.DOM.table({className: 'GoodsTable'},
             React.DOM.caption({className:'shop-name'}, this.props.shopName),
-            React.DOM.tbody({},
+            React.DOM.tbody(null,
                 React.DOM.tr({key: 'Head'},
                     React.DOM.th({className: 'GoodImage'}, 'Photo'),
-                    React.DOM.th({}, 'Good name'),
-                    React.DOM.th({}, 'Price'),
-                    React.DOM.th({}, 'Warehouse balance'),
+                    React.DOM.th(null, 'Good name'),
+                    React.DOM.th(null, 'Price'),
+                    React.DOM.th(null, 'Warehouse balance'),
                 ),
                 goodsTR,
             )       
