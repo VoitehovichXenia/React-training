@@ -16,21 +16,19 @@ var Filter = React.createClass({
     },
 
     sortWords: function (ev) {
-        this.setState({isSorted: ev.target.checked});
-        this.processingWordsList();
+        this.setState({isSorted: ev.target.checked}, this.processingWordsList);
     },
 
     filterWords: function (ev) {
-        this.setState({filterValue: ev.target.value});
-        this.processingWordsList();
+        this.setState({filterValue: ev.target.value}, this.processingWordsList);
     },
 
     processingWordsList: function () {
-        var newWordsList = this.state.currWords;
+        var newWordsList = this.state.initialWordsList;
 
         if(this.state.filterValue) {
             newWordsList = newWordsList.filter( word =>{
-                return word.indexOf(this.state.filterValue) !== '-1';
+                return word.indexOf(this.state.filterValue) !== -1;
             });
         } else {
             newWordsList = newWordsList.slice();
