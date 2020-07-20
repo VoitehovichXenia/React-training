@@ -1,0 +1,17 @@
+.FilterBlock .FilterList {
+    margin: 5px;
+    max-width: 300px;
+    min-height: 20px;
+    max-height: 150px;
+    overflow-y: scroll;
+    border: 1px solid black;
+}
+
+.FilterBlock .resetButton,
+.FilterBlock .checkbox {
+    margin: 0 10px;
+}
+
+.FilterBlock .textField {
+    width: 200px;
+}
