@@ -1,0 +1,23 @@
+.GoodsTable {
+    width: 100%;
+    text-align: center;
+    border-spacing: 0px 10px;
+}
+
+.GoodsTable caption{
+    font: italic normal 700 2em serif;
+}
+
+.GoodsTable th {
+    padding: 10px 20px;
+    background-color: rgb(153, 209, 255);
+    color: #333333;
+    border: solid 3px #333333;
+    border-right: none;
+    font-size: 1.5em;
+}
+
+.GoodsTable th:last-child {
+    border-right: solid 3px #333333;
+}
+

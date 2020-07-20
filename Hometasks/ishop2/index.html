@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>iShop 2</title>
+        
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        
+        <script src="Shop.js"></script>
+        <link type="text/css" rel="stylesheet" href="Shop.css">
+        <script src="Good.js"></script>
+        <link type="text/css" rel="stylesheet" href="Good.css">
+        
+        <script>
+            var shopName = "TechBomb Shop";
+            var goods = [
+                {name: 'iPhone 11', price: 1000, imgSRC: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=200&hei=250&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1567022175704', quantity: 10,},
+                {name: 'Samsung Galaxy s10', price: 900, imgSRC: 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s10-1.jpg', quantity: 5,},
+                {name: 'Huawei p30 pro', price: 800, imgSRC: 'https://fdn2.gsmarena.com/vv/pics/huawei/huawei-p30-pro-1.jpg', quantity: 3,},
+                {name: 'Xiaomi redmi note 8', price: 200, imgSRC: 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-8-1.jpg', quantity: 12,},
+            ];
+
+            ReactDOM.render(
+                React.createElement(GoodsTable, {shopName: shopName, goods: goods}),
+                document.getElementById('root')
+            );
+        </script>
+    </body>
+</html>

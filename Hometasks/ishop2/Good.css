@@ -1,0 +1,28 @@
+.Good:nth-child(odd){
+    background-color: rgb(153, 209, 255);
+}
+
+.Good .highlighted {
+    background-color: #dc143c;
+}
+
+.Good td {
+    vertical-align: middle;
+    font-size: 1em;
+    border: 3px solid #333333;
+    border-left: none;
+}
+
+.Good td:first-child {
+    border-left: 3px solid #333333;
+}
+
+.Good .GoodImage {
+    max-width: 250px;
+    max-height: 300px;
+    padding: 5px;
+}
+
+.Good .resetButton {
+    font-size: 20px;
+}
