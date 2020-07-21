@@ -4,6 +4,7 @@ var Good = React.createClass({
 
     propTypes: {
         imgSRC: React.PropTypes.string.isRequired,
+        id: React.PropTypes.string.isRequired,
         name: React.PropTypes.string.isRequired,
         price: React.PropTypes.number.isRequired,
         quantity: React.PropTypes.number.isRequired,
@@ -12,14 +13,15 @@ var Good = React.createClass({
         cbDeleteGood: React.PropTypes.func.isRequired,
     },
 
-    highlightGood: function () {
-        this.props.cbHighlightGood(this.props.name);
+    highlightGood: function () { //ev
+        //var id = ev.target.parentNode.getAttribute('data-id'); - second solution
+        this.props.cbHighlightGood(this.props.id);
     },
 
     deleteGood: function (ev) {
         ev.stopPropagation();
         if(confirm('Do you really want to delete this good?')){
-            this.props.cbDeleteGood(this.props.name);
+            this.props.cbDeleteGood(this.props.id);
         } else {
             alert('The '+ this.props.name + ' wasn\'t deleted');
         }        
@@ -27,6 +29,7 @@ var Good = React.createClass({
 
     render: function () {
         return React.DOM.tr({className: 'Good', 
+            //'data-id': this.props.id, - special attribute
             style: this.props.isHighlighted ? {backgroundColor: '#dc143c'}:{},
             onClick: this.highlightGood,
             },
@@ -34,11 +37,14 @@ var Good = React.createClass({
                 React.DOM.img({src: this.props.imgSRC, className: 'GoodImage'})
             ),
             React.DOM.td(null, this.props.name),
-            React.DOM.td(null, this.props.price),
+            React.DOM.td(null, this.props.price + '$'),
             React.DOM.td(null, this.props.quantity),
             React.DOM.td(null, 
-                React.DOM.input({type: 'button', value: 'Delete', className: 'resetButton', onClick: this.deleteGood}
-                )
+                React.DOM.input({type: 'button', 
+                    value: 'Delete', 
+                    className: 'resetButton',
+                    onClick: this.deleteGood
+                })
             )
         );
     },

@@ -5,7 +5,12 @@ var GoodsTable = React.createClass({
     getDefaultProps: function() {
         return {
             shopName: 'Food Market',
-            goods: [{name: 'Carrot', price: '1$', imgSRC: 'https://ginido.com/wp-content/uploads/2020/03/carrot.jpg', quantity: 200}],
+            goods: [{
+                name: 'Carrot', 
+                price: '1$', 
+                imgSRC: 'https://ginido.com/wp-content/uploads/2020/03/carrot.jpg', 
+                quantity: 200
+            }],
         }
     },
 
@@ -21,13 +26,13 @@ var GoodsTable = React.createClass({
         };
     },
 
-    highlightGood: function (good) {
-       this.setState({highlightedGood: good});
+    highlightGood: function (id) {
+       this.setState({highlightedGood: id});
     },
 
-    deleteGood: function (goodName) {
+    deleteGood: function (id) {
         var newGoods = this.state.goods.filter(good => {
-            return good.name !== goodName;
+            return good.id !== id;
         });
         this.setState({goods: newGoods});
     },
@@ -36,12 +41,13 @@ var GoodsTable = React.createClass({
 
         var goodsTR = this.state.goods.map(good =>
              React.createElement(Good, {
-                key: good.name, 
+                key: good.id, 
+                id: good.id,
                 name: good.name, 
                 price: good.price, 
                 imgSRC: good.imgSRC, 
                 quantity: good.quantity, 
-                isHighlighted: this.state.highlightedGood === good.name,
+                isHighlighted: this.state.highlightedGood === good.id,
                 cbHighlightGood: this.highlightGood,
                 cbDeleteGood: this.deleteGood,
              })
